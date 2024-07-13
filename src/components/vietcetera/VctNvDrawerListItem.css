@@ -1,0 +1,187 @@
+.default {
+  display: flex;
+  flex-direction: "row";
+}
+
+.v_list_item {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  min-height: none !important;
+}
+/* @media screen and (max-width: 1110px) {
+  .styles_wrapper__vzWYs .styles_content_section__94jOu {
+    flex-shrink: 0;
+    padding-left: .75rem;
+    padding-right: .75rem;
+    width: 56.3%
+  }
+
+  .styles_left__PgAeQ {
+    padding-right: 20px;
+    overflow-y: hidden !important;
+  }
+
+  .styles_wrapper__vzWYs .styles_side_section__JUV6m .styles_right__8Hl3r {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 18.75%
+  }
+} */
+
+/* .styles_wrapper__vzWYs .styles_side-section__JUV6m */
+.styles_left__PgAeQ {
+  border-right-width: 1px;
+  height: calc(100vh - 54px) !important;
+  width: 290px !important;
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* padding-bottom: 1.5rem; */
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+/*#region Custom 1{not yet has purpose }*/
+.py_2 {
+  padding-bottom: .5rem;
+  padding-top: .5rem
+}
+
+.py_12pt {
+  padding-bottom: 12px;
+  padding-top: 12px
+}
+
+.py_4pt {
+  padding-bottom: 4px;
+  padding-top: 4px
+}
+
+.px_6 {
+  padding-left: 1rem;
+  padding-right: 1rem
+}
+
+.px_4 {
+  padding-left: 1rem;
+  padding-right: 1rem
+}
+
+.pt_6 {
+  padding-top: 1.5rem
+}
+
+.ml_2 {
+  margin-left: .5rem
+}
+
+.typo_600_13pt {
+  font-size: 14px;
+  line-height: 1.4285714285714286em
+}
+
+.typo_600_16pt {
+  font-family: Poppins-SVN, sans-serif;
+  font-weight: 600 !important;
+}
+
+.typo_600_18pt {
+  font-size: 18px;
+  line-height: 1.4em
+}
+
+/*endregion Custom 1{not yet has purpose }*/
+
+/*#region normaly use*/
+.flex {
+  display: flex;
+}
+
+.flex_direction_row {
+  flex-direction: row;
+}
+
+.inline_block {
+  display: inline-block;
+}
+
+.item_center {
+  align-items: center;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.inline {
+  display: inline;
+}
+
+.justify_center {
+  justify-content: center;
+}
+
+.width_100Percents {
+  width: 100%;
+}
+
+.defaultTextColor {
+  color: rgb(41, 41, 41) !important;
+}
+
+/*#endregion normaly use*/
+
+.bg_white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255/var(--tw-bg-opacity)) !important
+}
+
+.w_min {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content
+}
+
+.duration_300 {
+  transition-duration: .3s
+}
+
+/*#region VctNvDrawerListItem main item*/
+.styles_as_button__tdtTw {
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none
+}
+
+.styles_ver_edition__6OX4j {
+  background: linear-gradient(95deg, hsla(0, 0%, 96%, .4) 0, hsla(0, 0%, 96%, .6) 55.5%, hsla(0, 0%, 96%, .4) 100%), var(--low-fi-white, #fff);
+  border: 1px solid #b0b0b0;
+  border-radius: 60px
+}
+
+.text_lmInkSecondary2 {
+  --tw-text-opacity: 1;
+  color: rgb(122 122 122/var(--tw-text-opacity));
+}
+
+.text_nvDrawerLv1 {
+  color: rgb(0, 55, 165) !important;
+}
+
+.item_nvDrawer {
+  height: 40px !important;
+  min-height: auto !important;
+  /* padding-top: 0 !important;
+  padding-bottom: 0 !important; */
+}
+
+.cursor-pointer {
+  cursor: pointer
+}
+
+.duration-300 {
+  transition-duration: .3s
+}
+
+/*#endregion VctNvDrawerListItem main item*/
