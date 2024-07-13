@@ -19,21 +19,21 @@
             v-for="item in leftNvDrawerContent"
             :key="item.id"
             :content="item"
-            :isOnTheRightSide="false"
+            :customClass="v_list_item"
           >
           </VctNvDrawerListItem>
         </v-list>
       </v-navigation-drawer>
 
+      <v-main class="d-flex item_center justify_center" style="height: 100vh">
+        Main Content
+      </v-main>
+      
       <v-navigation-drawer location="right" class="bg_white">
         <v-list>
           <v-list-item title="Drawer right"></v-list-item>
         </v-list>
       </v-navigation-drawer>
-      
-      <v-main class="d-flex item_center justify_center" style="height: 100vh">
-        Main Content
-      </v-main>
 
     </v-layout>
   </div>
@@ -44,7 +44,6 @@ import VietceteraAppBar from "./vietceteraAppBar.vue";
 import AdsBanner from "./adsBanner.vue";
 
 // import VctNvDrawerListItem from "./VctNvDrawerListItem.vue";
-import VctNvDrawerListItem from "./VctNvDrawerListItemChild.vue";
 import { leftNvDrawerContent } from "./VctNvDrawerData";
 
 const currentWindowResolution = {
