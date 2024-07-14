@@ -34,7 +34,7 @@
         <v-icon>mdi-magnify</v-icon>
       </v-btn>
 
-      <v-btn style="height: 48px"> Đăng nhập </v-btn>
+      <v-btn class="styles_btn_main styles_btn_40 styles_btn_main_fill__primary__hover styles_btn_main_fill__primary"> Đăng nhập </v-btn>
     </div>
   </v-app-bar>
 </template>

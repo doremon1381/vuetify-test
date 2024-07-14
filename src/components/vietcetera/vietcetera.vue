@@ -13,13 +13,15 @@
         :style="{          
           'top':toolbarHeight+'px'
         }" -->
-      <v-navigation-drawer v-model="drawer" class="styles_left__PgAeQ bg_white">
-        <v-list class="pt_6">
+      <v-navigation-drawer
+        v-model="drawer"
+        class="styles_navigationDrawer_left bg_white"
+      >
+        <v-list style="padding-top: 1.5rem" class="v_list">
           <VctNvDrawerListItem
             v-for="item in leftNvDrawerContent"
             :key="item.id"
             :content="item"
-            :customClass="v_list_item"
           >
           </VctNvDrawerListItem>
         </v-list>
@@ -28,13 +30,21 @@
       <v-main class="d-flex item_center justify_center" style="height: 100vh">
         Main Content
       </v-main>
-      
-      <v-navigation-drawer location="right" class="bg_white">
-        <v-list>
-          <v-list-item title="Drawer right"></v-list-item>
-        </v-list>
-      </v-navigation-drawer>
 
+      <v-navigation-drawer
+        location="right"
+        class="styles_right_side_section styles_border_right_side_section bg_white"
+      >
+        <v-list style="padding-top: 1.5rem;">
+          <VctNvDrawerListItem
+            v-for="item in rightNvDrawerContent"
+            :key="item.id"
+            :content="item"
+          >
+          </VctNvDrawerListItem>
+        </v-list>
+        <div><p style="color: black;">Quang Cao</p></div>
+      </v-navigation-drawer>
     </v-layout>
   </div>
 </template>
@@ -44,7 +54,7 @@ import VietceteraAppBar from "./vietceteraAppBar.vue";
 import AdsBanner from "./adsBanner.vue";
 
 // import VctNvDrawerListItem from "./VctNvDrawerListItem.vue";
-import { leftNvDrawerContent } from "./VctNvDrawerData";
+import { leftNvDrawerContent, rightNvDrawerContent } from "./VctNvDrawerData";
 
 const currentWindowResolution = {
   Width: window.screen.width * window.devicePixelRatio,
@@ -60,6 +70,7 @@ export default {
     return {
       drawer: null,
       leftNvDrawerContent,
+      rightNvDrawerContent,
       toolbarHeight: 54,
     };
   },
@@ -90,5 +101,9 @@ export default {
   min-height: calc(100vh - 608px);
   font-family: Poppins-SVN, sans-serif;
   margin: 0;
+}
+
+v-navigation-drawer >>> .v-navigation-drawer__border {
+  overflow-y: hidden;
 }
 </style>

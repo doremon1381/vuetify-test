@@ -1,60 +1,72 @@
 <template>
   <v-list-item class="v_list_item">
     <!-- in design: <a :style="importedStyle-a"> <div :style="importedStyle-div">  </div</a> -->
-    <div v-if="!isOnTheRightSide">
+    <!-- TODO: for now, every item of level1 will look like internaltional edition , I'll do sth later-->
+    <div
+      :class="content.hasCustomStyle ? content.style.rootItem : ''"
+      style="width: 100%; height: 100%"
+    >
       <a
-        v-if="!isMainComponentContentText"
+        v-if="content.href"
         :href="content.href"
-        :class="styleComputed"
-        style="width: 100%"
+        style="width: 100%; height: 100%"
+        :class="content.style.link ? content.style.link : ''"
       >
-        <div v-if="hasIcon">
-          <img
-            v-if="hasIconSrc"
-            :src="content.iconSrc"
-            style="width: 50px; height: 50px"
-          />
-          <div v-else v-html="iconHtml"></div>
-        </div>
-
-        <!-- TODO: for now, every item of level1 will look like internaltional edition , I'll do sth later-->
-        <span
-          id="title"
-          class="ml_2 typo_600_13pt typo_600_16pt defaultTextColor inline uppercase justify_center width_100Percents"
-          style="opacity: 0.7"
-          >{{ content.name }}</span
+        <div
+          v-if="content.hasIcon"
+          :class="content.style.image ? content.style.image : ''"
         >
-      </a>
-
-      <div v-else>
-        <div v-if="hasIcon">
-          <img
-            v-if="hasIconSrc"
-            :src="content.iconSrc"
-            style="width: 50px; height: 50px"
-          />
-          <div v-else v-html="iconHtml"></div>
+          <img v-if="hasIconSrc" :src="content.iconSrc" class="img_size" />
+          <div v-else v-html="content.iconHtml"></div>
         </div>
-        <div class="flex py_12pt px_4">
+        <div id="content">
           <span
-            class="ml_2 typo_600_13pt typo_600_16pt defaultTextColor inline uppercase justify_center width_100Percents"
-            :class="{ text_nvDrawerLv1: isLevel1, typo_600_18pt: isLevel1 }"
+            id="title"
+            :class="content.style.content ? content.style.content : ''"
             >{{ content.name }}</span
           >
         </div>
+        <div>
+          <slot name="endRegion"></slot>
+        </div>
+      </a>
+      <div
+        v-else
+        :class="content.style.link ? content.style.link : ''"
+        style="width: 100%; height: 100%"
+      >
+        <div
+          v-if="content.hasIcon"
+          :class="content.style.image ? content.style.image : ''"
+        >
+          <img v-if="hasIconSrc" :src="content.iconSrc" class="img_size" />
+          <div v-else v-html="content.iconHtml"></div>
+        </div>
+        <div id="content">
+          <span
+            id="title"
+            :class="content.style.content ? content.style.content : ''"
+            >{{ content.name }}</span
+          >
+        </div>
+        <div>
+          <slot name="endRegion"></slot>
+        </div>
       </div>
     </div>
-    <div v-else>
-      <div><!-- div that hold template for content.id --></div>
-      <span><!-- for content.name or title--></span>
-    </div>
-    <div>
+    <div
+      id="outerDiv"
+      :class="
+        content.style.subContents_outerDiv
+          ? content.style.subContents_outerDiv
+          : ''
+      "
+    >
       <v-list v-if="content.subContents">
         <VctNvDrawerListItem
           v-for="item in content.subContents"
           :key="item"
           :content="item"
-          :isOnTheRightSide="isOnTheRightSide"
         ></VctNvDrawerListItem>
       </v-list>
     </div>
@@ -68,26 +80,31 @@ export default {
       type: Object,
       required: true,
     },
+    // TODO: comment for now
+    // customClass: {
+    //   type: String,
+    // },
     // TODO: if it's not on the right side, then it's on the left side
-    isOnTheRightSide: {
-      type: Boolean,
-      required: true,
-    },
+    // isOnTheRightSide: {
+    //   type: Boolean,
+    //   required: true,
+    // },
   },
   data() {
     return {
-      hasIcon: this.content.hasIcon,
-      itemType: this.content.itemType,
-      iconHtml: this.content.icon,
-      icon: this.content.icon,
-      hasIconSrc:
-        this.content.iconSrc !== null && this.content.iconSrc !== undefined
-          ? true
-          : false,
-      style: this.content.style,
-      hasCustomStyle: this.content.hasCustomStyle,
-      importClasses: this.content.class,
-      level: this.content.level,
+      //hasIcon: this.content.hasIcon,
+      //itemType: this.content.itemType,
+      //iconHtml: this.content.icon,
+      // icon: this.content.icon,
+      // hasIconSrc:
+      //   this.content.iconSrc !== null && this.content.iconSrc !== undefined
+      //     ? true
+      //     : false,
+      // iconSrc: this.content.iconSrc,
+      // hasCustomStyle: this.content.hasCustomStyle,
+      // importClasses: this.content.class,
+      // href: this.content.href,
+      // level: this.content.level,
     };
   },
   methods: {
@@ -96,21 +113,13 @@ export default {
     //     : https://devdocs.io/dom/canvasrenderingcontext2d/imagesmoothingquality
   },
   computed: {
-    isMainComponentContentText() {
-      return this.itemType === "text" ? true : false;
+    hasIconSrc() {
+      return this.content.iconSrc !== null && this.content.iconSrc !== undefined
+        ? true
+        : false;
     },
-
-    styleComputed() {
-      if (this.hasCustomStyle === true) {
-        //console.log(this.importClasses);
-        return this.importClasses;
-      } else {
-        return "default";
-      }
-    },
-
     isLevel1() {
-      if (this.level == 1) {
+      if (this.content.level == 1) {
         return true;
       } else return false;
     },
@@ -120,4 +129,16 @@ export default {
 
 <style scoped>
 @import "./VctNvDrawerListItem.css";
+
+div {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+*,
+:after,
+:before {
+  border: 0 solid #e5e7eb;
+  box-sizing: border-box;
+}
 </style>
