@@ -2,72 +2,39 @@
   <v-list-item class="v_list_item">
     <!-- in design: <a :style="importedStyle-a"> <div :style="importedStyle-div">  </div</a> -->
     <!-- TODO: for now, every item of level1 will look like internaltional edition , I'll do sth later-->
-    <div
-      :class="content.hasCustomStyle ? content.style.rootItem : ''"
-      style="width: 100%; height: 100%"
-    >
-      <a
-        v-if="content.href"
-        :href="content.href"
-        style="width: 100%; height: 100%"
-        :class="content.style.link ? content.style.link : ''"
-      >
-        <div
-          v-if="content.hasIcon"
-          :class="content.style.image ? content.style.image : ''"
-        >
+    <div :class="content.hasCustomStyle ? content.style.rootItem : ''" style="width: 100%; height: 100%">
+      <a v-if="content.href" :href="content.href" style="width: 100%; height: 100%"
+        :class="content.style.link ? content.style.link : ''">
+        <div v-if="content.hasIcon" :class="content.style.image ? content.style.image : ''">
           <img v-if="hasIconSrc" :src="content.iconSrc" class="img_size" />
           <div v-else v-html="content.iconHtml"></div>
         </div>
         <div id="content">
-          <span
-            id="title"
-            :class="content.style.content ? content.style.content : ''"
-            >{{ content.name }}</span
-          >
+          <span id="title" :class="content.style.content ? content.style.content : ''">{{ content.name }}</span>
         </div>
         <div>
           <slot name="endRegion"></slot>
         </div>
       </a>
-      <div
-        v-else
-        :class="content.style.link ? content.style.link : ''"
-        style="width: 100%; height: 100%"
-      >
-        <div
-          v-if="content.hasIcon"
-          :class="content.style.image ? content.style.image : ''"
-        >
+      <div v-else :class="content.style.link ? content.style.link : ''" style="width: 100%; height: 100%">
+        <div v-if="content.hasIcon" :class="content.style.image ? content.style.image : ''">
           <img v-if="hasIconSrc" :src="content.iconSrc" class="img_size" />
           <div v-else v-html="content.iconHtml"></div>
         </div>
         <div id="content">
-          <span
-            id="title"
-            :class="content.style.content ? content.style.content : ''"
-            >{{ content.name }}</span
-          >
+          <span id="title" :class="content.style.content ? content.style.content : ''">{{ content.name }}</span>
         </div>
         <div>
           <slot name="endRegion"></slot>
         </div>
       </div>
     </div>
-    <div
-      id="outerDiv"
-      :class="
-        content.style.subContents_outerDiv
-          ? content.style.subContents_outerDiv
-          : ''
-      "
-    >
+    <div id="outerDiv" :class="content.style.subContents_outerDiv
+        ? content.style.subContents_outerDiv
+        : ''
+      ">
       <v-list v-if="content.subContents">
-        <VctNvDrawerListItem
-          v-for="item in content.subContents"
-          :key="item"
-          :content="item"
-        ></VctNvDrawerListItem>
+        <VctNvDrawerListItem v-for="item in content.subContents" :key="item" :content="item"></VctNvDrawerListItem>
       </v-list>
     </div>
   </v-list-item>

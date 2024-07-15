@@ -1,3 +1,7 @@
+:root {
+  --v-btn-height: 36px;
+}
+
 .default {
   display: flex;
   flex-direction: "row";
@@ -12,7 +16,7 @@
 }
 
 /* @media screen and (max-width: 1110px) {
-  .styles_wrapper__vzWYs .styles_content_section__94jOu {
+  .styles_wrapper__vzWYs .styles_content_section {
     flex-shrink: 0;
     padding-left: .75rem;
     padding-right: .75rem;
@@ -52,7 +56,7 @@
   padding-top: 0.5rem
 }
 
-.py_1{
+.py_1 {
   padding-bottom: 0.25rem;
   padding-top: 0.25rem
 }
@@ -105,11 +109,11 @@
   padding-top: 1.5rem
 }
 
-.pl_2{
+.pl_2 {
   padding-left: 0.5rem;
 }
 
-.pl_4{
+.pl_4 {
   padding-left: 1rem;
 }
 
@@ -253,9 +257,8 @@
   /* color: rgb(255 255 255/var(--tw-text-opacity)) */
 }
 
-.link_primary_left_hover:hover{
+.link_primary_left_hover:hover {
   border-radius: 0px 60px 60px 0px;
-
   border-left-width: 5px;
   /* padding-left: 0.5rem; */
 
@@ -265,6 +268,26 @@
   background-color: rgb(217 217 217);
   border-color: rgb(85 85 85/var(--tw-border-opacity));
   /* color: rgb(255 255 255/var(--tw-text-opacity)) */
+}
+
+.btn_40size_important {
+  width: calc(var(--v-btn-height) + 4px) !important;
+  height: calc(var(--v-btn-height) + 4px) !important;
+}
+
+.btn_46size_important {
+  width: calc(var(--v-btn-height) + 10px) !important;
+  height: calc(var(--v-btn-height) + 10px) !important;
+}
+
+.btn_hover:hover {
+  border-radius: 60px 60px 60px 60px;
+
+  --tw-border-opacity: 1;
+  --tw-bg-opacity: 1;
+  --tw-text-opacity: 1;
+  background-color: rgb(217 217 217);
+  border-color: rgb(85 85 85/var(--tw-border-opacity));
 }
 
 .styles_btn_main_fill__primary__hover:hover {
@@ -285,6 +308,23 @@
   border-color: rgb(41 41 41/var(--tw-border-opacity));
   border-width: 1px;
   color: rgb(255 255 255/var(--tw-text-opacity))
+}
+
+.my_auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.mr_10px {
+  margin-right: 10px;
+}
+
+.width_33\.3\% {
+  width: 33.3%;
+}
+
+.justify_right {
+  justify-content: right;
 }
 
 /*#region VctNvDrawerListItem main item*/
@@ -379,3 +419,40 @@
 }
 
 /*#endregion VctNvDrawerListItem main item*/
+
+/*#region v-main */
+@media screen and (min-width: 1668px) {
+  .v_main_section {
+      flex-shrink:0;
+      padding-left: .75rem;
+      padding-right: .75rem;
+      width: 56.3%
+  }
+
+  .styles_side-section__JUV6m.styles_left__PgAeQ {
+      padding-left: 1rem;
+      width: 290px
+  }
+
+  .styles_side-section__JUV6m.styles_right__8Hl3r {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      width: 18.75%
+  }
+}
+
+.v_main_section {
+  padding-top: 1.5rem;
+  position: relative
+}
+
+.height_100vh{
+  height: 100vh;
+}
+
+.styles_blockInfoArticle {
+  bottom: 0;
+  position: absolute;
+  width: 100%
+}
+/*#endregion v-main*/

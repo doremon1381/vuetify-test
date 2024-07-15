@@ -2,48 +2,36 @@
   <div class="mainDiv bg_white">
     <AdsBanner />
     <v-layout class="rounded rounded-md">
-      <VietceteraAppBar
-        title="Vietcetera"
-        :hideTogleButtonWhenDisplayIsLgAndUp="true"
-        :height="toolbarHeight"
-        @Click_Stop="drawer = !drawer"
-      />
+      <VietceteraAppBar title="Vietcetera" :hideTogleButtonWhenDisplayIsLgAndUp="true" :height="toolbarHeight"
+        @Click_Stop="drawer = !drawer" />
       <!-- TODO: for me, I'll modify this property to stick the navigation drawer to appbar,
                : but in vietcetera.com, it's apperance is not the way I think 
         :style="{          
           'top':toolbarHeight+'px'
         }" -->
-      <v-navigation-drawer
-        v-model="drawer"
-        class="styles_navigationDrawer_left bg_white"
-      >
+      <v-navigation-drawer v-model="drawer" class="styles_navigationDrawer_left bg_white">
         <v-list style="padding-top: 1.5rem" class="v_list">
-          <VctNvDrawerListItem
-            v-for="item in leftNvDrawerContent"
-            :key="item.id"
-            :content="item"
-          >
+          <VctNvDrawerListItem v-for="item in leftNvDrawerContent" :key="item.id" :content="item">
           </VctNvDrawerListItem>
         </v-list>
       </v-navigation-drawer>
 
-      <v-main class="d-flex item_center justify_center" style="height: 100vh">
+      <v-main class="d-flex item_center justify_center v_main_section" style="height: 100vh">
         Main Content
+        <div>
+          <VctCard></VctCard>
+        </div>
+        <div></div>
       </v-main>
 
-      <v-navigation-drawer
-        location="right"
-        class="styles_right_side_section styles_border_right_side_section bg_white"
-      >
-        <v-list style="padding-top: 1.5rem;">
-          <VctNvDrawerListItem
-            v-for="item in rightNvDrawerContent"
-            :key="item.id"
-            :content="item"
-          >
+      <v-navigation-drawer location="right" class="styles_right_side_section styles_border_right_side_section bg_white">
+        <v-list style="padding-top: 1.5rem">
+          <VctNvDrawerListItem v-for="item in rightNvDrawerContent" :key="item.id" :content="item">
           </VctNvDrawerListItem>
         </v-list>
-        <div><p style="color: black;">Quang Cao</p></div>
+        <div>
+          <p style="color: black">Quang Cao</p>
+        </div>
       </v-navigation-drawer>
     </v-layout>
   </div>
@@ -102,8 +90,8 @@ export default {
   font-family: Poppins-SVN, sans-serif;
   margin: 0;
 }
-
-v-navigation-drawer >>> .v-navigation-drawer__border {
+/* 
+v-navigation-drawer>>>.v-navigation-drawer__border {
   overflow-y: hidden;
-}
+} */
 </style>

@@ -7,13 +7,13 @@ import {
     vctWorldIcon,
 } from "./VctIcons";
 
-// TODO: item as template, default style and where can be modified
-//     : inside class is fixed for now, text in uppercase is for modified
+// TODO: template of v-navigation-drawer's item, default styles and where those can be modified
+//     : variable inside class is fixed for now, text in uppercase is for modified
 //     : "..." mean still has something, but it's trivial in this description
 {/* <v-list-item class="v_list_item" ...>
     <div :class= ROOTITEM ...>
       <a v-if="content.href" :class= LINK ...>
-        <div :class = IMG_REGION ...>
+        <div v-if="content.hasIcon" :class = IMG_REGION ...>
           <img v-if="hasIconSrc" class="img_size" .../>
           <div v-else v-html="content.iconHtml"></div>
         </div>
@@ -25,8 +25,7 @@ import {
         </div>
       </a>
       <div v-else :class= LINK ...> <!-- I use 'LINK' as name because it is the same region in design, but the name can make some confuse. -->
-        <div v-if="content.hasIcon"
-          :class= IMG_REGION ...>
+        <div v-if="content.hasIcon" :class= IMG_REGION ...>
           <img v-if="hasIconSrc" class="img_size" .../>
           <div v-else v-html="content.iconHtml"></div>
         </div>
@@ -58,12 +57,6 @@ const StyleElemts = Object.freeze({
 });
 
 const base = "";
-const customImgIconSize = {
-    dx: 0,
-    dy: 0,
-    dw: 50,
-    dh: 50
-};
 
 const imgSrcs = {
     Nguyen_Thi_Bao_Tran: "https://img.vietcetera.com/uploads/avatar-images/17-jul-2023/nguyen-thi-bao-tran-1689566802622.jpg",
@@ -398,7 +391,6 @@ export const rightNvDrawerContent = [
         id: 1,
         name: "phổ biến",
         title: undefined,
-
         href: undefined,
         hasIcon: false,
         iconHtml: null,
@@ -408,7 +400,6 @@ export const rightNvDrawerContent = [
         subContents: [{
             id: 1,
             name: "Ly hôn xanh - Hạnh phúc mong manh trong hôn nhân chóng vánh",
-
             hasIcon: false,
             iconHtml: null,
             href: getHrefLink(base, "/vn"),

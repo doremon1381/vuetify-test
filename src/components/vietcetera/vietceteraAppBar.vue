@@ -1,46 +1,48 @@
 <template>
-  <v-app-bar :elevation="2" :style="{'height': height + 'px'}" class="bg_white defaultTextColor">
+  <v-app-bar :elevation="2" :style="{ height: height + 'px' }" class="bg_white defaultTextColor">
     <template v-slot:prepend>
       <!-- https://vuetifyjs.com/en/components/navigation-drawers/#temporary -->
-      <v-app-bar-nav-icon
-        @click.stop="this.$emit('Click_Stop')"
-        v-if="!hideTogleButton"
-      ></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click.stop="this.$emit('Click_Stop')" class="btn_40size_important btn_hover"
+        v-if="!hideTogleButton"></v-app-bar-nav-icon>
 
-      <v-app-bar-title
-        :style="{
-          'margin-left': marginLeftWhenDisplayResized + 'px' + '!important',
-        }"
-        >{{ title }}</v-app-bar-title
-      >
+      <v-app-bar-title class="v_app_bar_title" :style="{
+        'margin-left': marginLeftWhenDisplayResized + 'px' + '!important',
+      }">{{ title }}</v-app-bar-title>
     </template>
 
     <div class="appBar_MiddleRegion" v-if="$vuetify.display.lgAndUp">
-      <v-btn>home</v-btn>
-      <v-btn>youtube</v-btn>
-      <v-btn>extend</v-btn>
+      <v-btn>
+        <a href="/vn">
+          <div v-html="vctHomeIcon"></div>
+        </a>
+      </v-btn>
+      <v-btn>
+        <a href="/vn">
+          <div v-html="vctYoutubeIcon"></div>
+        </a>
+      </v-btn>
+      <v-btn>
+        <a href="/vn">
+          <div v-html="vctInstagramIcon"></div>
+        </a>
+      </v-btn>
     </div>
 
-    <div
-      class="appBar_EndRegion"
-      style="
-        justify-content: right;
-        margin-top: auto;
-        margin-bottom: auto;
-        margin-right: 4px;
-      "
-    >
-      <v-btn icon style="height: 48px">
+    <div class="flex item_center my_auto mr_10px width_33.3% justify_right">
+      <v-btn icon class="btn_46size_important btn_hover">
         <v-icon>mdi-magnify</v-icon>
       </v-btn>
 
-      <v-btn class="styles_btn_main styles_btn_40 styles_btn_main_fill__primary__hover styles_btn_main_fill__primary"> Đăng nhập </v-btn>
+      <v-btn class="styles_btn_main styles_btn_40 styles_btn_main_fill__primary__hover styles_btn_main_fill__primary">
+        Đăng nhập
+      </v-btn>
     </div>
   </v-app-bar>
 </template>
 
 <script>
 import { useDisplay } from "vuetify";
+import { vctHomeIcon, vctInstagramIcon, vctYoutubeIcon } from './VctIcons'
 
 export default {
   props: {
@@ -65,6 +67,9 @@ export default {
     return {
       //onScreenMaxWidth: systemResolution.width / 2,
       isDisplayLgAndUp: useDisplay().lgAndUp,
+      vctHomeIcon,
+      vctInstagramIcon,
+      vctYoutubeIcon
     };
   },
   methods: {},
@@ -91,9 +96,12 @@ export default {
   width: 33.3%;
 }
 
-.appBar_EndRegion {
-  width: 33.3%;
-  display: flex;
-  justify-content: flex-end;
+.v_app_bar_title {
+  position: sticky;
+  right: 0px;
+  left: 0px;
+  width: 100vw;
+  margin: 0px calc(50% - 70vw);
+  top: 0px;
 }
 </style>
