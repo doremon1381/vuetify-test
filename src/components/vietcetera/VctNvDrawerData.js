@@ -79,7 +79,7 @@ const ItemType = Object.freeze({
 });
 
 const subContent_withoutIcon = {
-    rootItem: "py_1 pl_2 link_primary_left link_primary_right_hover ",
+    rootItem: "py_1 pl_2 link_primary_left_transition_0.1 link_primary_right_hover ",
     link: "text_lmInkSecondary2 styles_as_button link_itemsInRow",
     content: "typo_600_14pt defaultTextColor inline uppercase justify_center childItem_opacity width_100%",
     subContents_outerDiv: "",
@@ -87,7 +87,7 @@ const subContent_withoutIcon = {
 };
 
 const subContent_withoutIcon_left = {
-    rootItem: "py_1 pl_2 link_primary_left link_primary_left_hover ",
+    rootItem: "py_1 pl_2 link_primary_left_transition_0.1 link_primary_left_hover ",
     link: "text_lmInkSecondary2 styles_as_button link_itemsInRow",
     content: "typo_600_13pt defaultTextColor inline uppercase justify_center childItem_opacity width_100%",
     subContents_outerDiv: "",
@@ -95,7 +95,7 @@ const subContent_withoutIcon_left = {
 };
 
 const subContent_withIcon = {
-    rootItem: "py_1 pl_2 link_primary_left link_primary_right_hover ",
+    rootItem: "py_1 pl_2 link_primary_left_transition_0.1 link_primary_right_hover ",
     link: "text_lmInkSecondary2 styles_as_button link_itemsInRow",
     content: "ml_2 typo_600_14pt defaultTextColor inline uppercase justify_center childItem_opacity width_100%",
     subContents_outerDiv: "",

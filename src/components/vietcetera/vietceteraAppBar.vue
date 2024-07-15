@@ -1,16 +1,17 @@
 <template>
-  <v-app-bar :elevation="2" :style="{ height: height + 'px' }" class="bg_white defaultTextColor">
+  <v-app-bar :elevation="2" :style="{ height: height + 'px' }"
+    class="defaultTextColor glass">
     <template v-slot:prepend>
       <!-- https://vuetifyjs.com/en/components/navigation-drawers/#temporary -->
-      <v-app-bar-nav-icon @click.stop="this.$emit('Click_Stop')" class="btn_40size_important btn_hover"
+      <v-app-bar-nav-icon @click.stop="this.$emit('Click_Stop')" class="btn_40size_important btn_hover mb_10px_important"
         v-if="!hideTogleButton"></v-app-bar-nav-icon>
 
-      <v-app-bar-title class="v_app_bar_title" :style="{
+      <v-app-bar-title class="v_app_bar_title mb_10px_important" :style="{
         'margin-left': marginLeftWhenDisplayResized + 'px' + '!important',
       }">{{ title }}</v-app-bar-title>
     </template>
 
-    <div class="appBar_MiddleRegion" v-if="$vuetify.display.lgAndUp">
+    <div class="appBar_MiddleRegion mb_10px_important" v-if="$vuetify.display.lgAndUp">
       <v-btn>
         <a href="/vn">
           <div v-html="vctHomeIcon"></div>
@@ -28,12 +29,12 @@
       </v-btn>
     </div>
 
-    <div class="flex item_center my_auto mr_10px width_33.3% justify_right">
-      <v-btn icon class="btn_46size_important btn_hover">
+    <div class="flex item_center my_auto mr_10px width_33.3% justify_right mb_10px_important height_100%">
+      <v-btn icon class="btn_40size_important btn_hover mb_10px_important">
         <v-icon>mdi-magnify</v-icon>
       </v-btn>
 
-      <v-btn class="styles_btn_main styles_btn_40 styles_btn_main_fill__primary__hover styles_btn_main_fill__primary">
+      <v-btn class="styles_btn_main styles_btn_40 styles_btn_main_fill__primary__hover styles_btn_main_fill__primary mb_10px_important">
         Đăng nhập
       </v-btn>
     </div>
@@ -43,6 +44,8 @@
 <script>
 import { useDisplay } from "vuetify";
 import { vctHomeIcon, vctInstagramIcon, vctYoutubeIcon } from './VctIcons'
+
+const defaultHeight = 64;
 
 export default {
   props: {
@@ -103,5 +106,9 @@ export default {
   width: 100vw;
   margin: 0px calc(50% - 70vw);
   top: 0px;
+}
+
+v-app-bar div {
+  height: 100% !important;
 }
 </style>

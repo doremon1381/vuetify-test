@@ -10,7 +10,7 @@
           'top':toolbarHeight+'px'
         }" -->
       <v-navigation-drawer v-model="drawer" class="styles_navigationDrawer_left bg_white">
-        <v-list style="padding-top: 1.5rem" class="v_list">
+        <v-list style="padding-top: 1.5rem">
           <VctNvDrawerListItem v-for="item in leftNvDrawerContent" :key="item.id" :content="item">
           </VctNvDrawerListItem>
         </v-list>
@@ -18,14 +18,26 @@
 
       <v-main class="d-flex item_center justify_center v_main_section" style="height: 100vh">
         Main Content
-        <div>
-          <VctCard></VctCard>
+        <div id="1">
+          <div>
+            <VctCard></VctCard>
+            <VctCard></VctCard>
+          </div>
+          <div>
+            <VctCard></VctCard>
+            <VctCard></VctCard>
+            <VctCard></VctCard>
+          </div>
+          <div>Quang cao</div>
+          <div>
+            <VctCard></VctCard>
+          </div>
         </div>
         <div></div>
       </v-main>
 
-      <v-navigation-drawer location="right" class="styles_right_side_section styles_border_right_side_section bg_white">
-        <v-list style="padding-top: 1.5rem">
+      <v-navigation-drawer location="right" class="styles_right_side_section styles_border_right_side_section duration_300 bg_white">
+        <v-list style="padding-top: 1.5rem;">
           <VctNvDrawerListItem v-for="item in rightNvDrawerContent" :key="item.id" :content="item">
           </VctNvDrawerListItem>
         </v-list>
@@ -89,6 +101,8 @@ export default {
   min-height: calc(100vh - 608px);
   font-family: Poppins-SVN, sans-serif;
   margin: 0;
+
+  box-sizing: border-box;
 }
 /* 
 v-navigation-drawer>>>.v-navigation-drawer__border {

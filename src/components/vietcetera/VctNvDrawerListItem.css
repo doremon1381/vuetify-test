@@ -38,7 +38,8 @@
 /* .styles_wrapper__vzWYs .styles_side-section__JUV6m */
 .styles_navigationDrawer_left {
   border-right-width: 1px;
-  height: calc(100vh - 54px) !important;
+  /* height: calc(100vh - 54px) !important; */
+  top: 54px !important;
   width: 290px !important;
   overflow-x: hidden;
   overflow-y: auto;
@@ -202,6 +203,10 @@
   width: 100%;
 }
 
+.height_100\% {
+  height: 100%;
+}
+
 .defaultTextColor {
   color: rgb(41, 41, 41) !important;
 }
@@ -211,6 +216,11 @@
 .bg_white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255/var(--tw-bg-opacity)) !important
+}
+
+.bg_aqua {
+  --tw-bg-opacity: 1;
+  background-color: rgb(200 200 258/var(--tw-bg-opacity)) !important
 }
 
 .w_min {
@@ -239,7 +249,7 @@
   padding: .5rem 1rem
 }
 
-.link_primary_left {
+.link_primary_left_transition_0\.1 {
   transition-duration: 0.1s;
 }
 
@@ -280,6 +290,10 @@
   height: calc(var(--v-btn-height) + 10px) !important;
 }
 
+.btn_hover_do_nothing:hover {
+  background-color: transparent;
+}
+
 .btn_hover:hover {
   border-radius: 60px 60px 60px 60px;
 
@@ -317,6 +331,10 @@
 
 .mr_10px {
   margin-right: 10px;
+}
+
+.mb_10px_important {
+  margin-bottom: 10px !important;
 }
 
 .width_33\.3\% {
@@ -409,7 +427,10 @@
 
 .styles_right_side_section {
   border-left-width: 1px !important;
-  display: block
+  display: block;
+
+  top: 54px !important;
+  width: 18.75% !important;
 }
 
 .styles_border_right_side_section {
@@ -418,26 +439,36 @@
   flex-shrink: 0
 }
 
+/* from: https://stackoverflow.com/questions/76296408/how-do-i-make-glass-blur-background-like-in-windows-11-menus-and-apps-in-a-html */
+.glass {
+  /* CSS for Glass UI, play with it for better or more suitable results */
+  backdrop-filter: blur(5px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(25px) saturate(180%) !important;
+  background-color: rgba(255, 255, 255, 0.57) !important;
+  border-radius: 0px;
+  border: 1px solid rgba(209, 213, 219, 0.3) !important;
+}
+
 /*#endregion VctNvDrawerListItem main item*/
 
 /*#region v-main */
 @media screen and (min-width: 1668px) {
   .v_main_section {
-      flex-shrink:0;
-      padding-left: .75rem;
-      padding-right: .75rem;
-      width: 56.3%
+    flex-shrink: 0;
+    padding-left: .75rem;
+    padding-right: .75rem;
+    width: 56.3%
   }
 
   .styles_side-section__JUV6m.styles_left__PgAeQ {
-      padding-left: 1rem;
-      width: 290px
+    padding-left: 1rem;
+    width: 290px
   }
 
   .styles_side-section__JUV6m.styles_right__8Hl3r {
-      padding-left: 1rem;
-      padding-right: 1rem;
-      width: 18.75%
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 18.75%
   }
 }
 
@@ -446,7 +477,11 @@
   position: relative
 }
 
-.height_100vh{
+.overflow_y{
+  overflow-y: auto;
+}
+
+.height_100vh {
   height: 100vh;
 }
 
@@ -455,4 +490,5 @@
   position: absolute;
   width: 100%
 }
+
 /*#endregion v-main*/
