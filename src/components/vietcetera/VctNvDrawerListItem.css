@@ -11,6 +11,7 @@
   padding-left: 1rem !important;
   min-height: auto !important;
 
+  background-color: inherit !important;
   width: 100%;
   height: 100%;
 }
@@ -49,6 +50,8 @@
   padding-right: 0;
   position: -webkit-sticky;
   position: sticky;
+
+  background-color: inherit !important;
 }
 
 /*#region Custom 1{not yet has purpose }*/
@@ -110,12 +113,24 @@
   padding-top: 1.5rem
 }
 
+.pt_4 {
+  padding-top: 1rem
+}
+
 .pl_2 {
   padding-left: 0.5rem;
 }
 
 .pl_4 {
   padding-left: 1rem;
+}
+
+.pl_6 {
+  padding-left: 1.5rem;
+}
+
+.pr_8 {
+  padding-right: 2rem;
 }
 
 .ml_2 {
@@ -179,12 +194,20 @@
   flex-direction: row;
 }
 
+.flex_direction_column {
+  flex-direction: column;
+}
+
 .inline_block {
   display: inline-block;
 }
 
 .item_center {
   align-items: center;
+}
+
+.item_start {
+  align-items: start;
 }
 
 .uppercase {
@@ -211,6 +234,10 @@
   color: rgb(41, 41, 41) !important;
 }
 
+.position_relative {
+  position: relative;
+}
+
 /*#endregion normaly use*/
 
 .bg_white {
@@ -229,6 +256,14 @@
   width: min-content
 }
 
+.w_auto {
+  width: auto;
+}
+
+.height_6 {
+  height: 1.5rem;
+}
+
 .duration_300 {
   transition-duration: .3s
 }
@@ -242,6 +277,7 @@
   text-transform: uppercase;
   transition-duration: .3s;
   vertical-align: middle;
+  background-color: inherit;
 }
 
 .styles_btn_40 {
@@ -327,6 +363,11 @@
 .my_auto {
   margin-top: auto;
   margin-bottom: auto;
+}
+
+.my_10px {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .mr_10px {
@@ -428,6 +469,7 @@
 .styles_right_side_section {
   border-left-width: 1px !important;
   display: block;
+  /* background-color: inherit !important; */
 
   top: 54px !important;
   width: 18.75% !important;
@@ -443,52 +485,33 @@
 .glass {
   /* CSS for Glass UI, play with it for better or more suitable results */
   backdrop-filter: blur(5px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(25px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(5px) saturate(180%) !important;
   background-color: rgba(255, 255, 255, 0.57) !important;
   border-radius: 0px;
-  border: 1px solid rgba(209, 213, 219, 0.3) !important;
+  /* border: 1px solid rgba(209, 213, 219, 0.3) !important; */
 }
 
 /*#endregion VctNvDrawerListItem main item*/
 
 /*#region v-main */
-@media screen and (min-width: 1668px) {
-  .v_main_section {
-    flex-shrink: 0;
-    padding-left: .75rem;
-    padding-right: .75rem;
-    width: 56.3%
-  }
+/* width */
+/* ::-webkit-scrollbar {
+  width: 10px;
+} */
 
-  .styles_side-section__JUV6m.styles_left__PgAeQ {
-    padding-left: 1rem;
-    width: 290px
-  }
+/* Track */
+/* ::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+} */
 
-  .styles_side-section__JUV6m.styles_right__8Hl3r {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    width: 18.75%
-  }
-}
+/* Handle */
+/* ::-webkit-scrollbar-thumb {
+  background: #c1c1c1; 
+} */
 
-.v_main_section {
-  padding-top: 1.5rem;
-  position: relative
-}
-
-.overflow_y{
-  overflow-y: auto;
-}
-
-.height_100vh {
-  height: 100vh;
-}
-
-.styles_blockInfoArticle {
-  bottom: 0;
-  position: absolute;
-  width: 100%
-}
+/* Handle on hover */
+/* ::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8; 
+} */
 
 /*#endregion v-main*/

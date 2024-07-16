@@ -30,11 +30,11 @@
       </div>
     </div>
     <div id="outerDiv" :class="content.style.subContents_outerDiv
-        ? content.style.subContents_outerDiv
-        : ''
+      ? content.style.subContents_outerDiv
+      : ''
       ">
       <v-list v-if="content.subContents">
-        <VctNvDrawerListItem v-for="item in content.subContents" :key="item" :content="item"></VctNvDrawerListItem>
+        <VctNvDrawerListItem v-for="item in content.subContents" :key="item" :content="item" />
       </v-list>
     </div>
   </v-list-item>
@@ -58,21 +58,7 @@ export default {
     // },
   },
   data() {
-    return {
-      //hasIcon: this.content.hasIcon,
-      //itemType: this.content.itemType,
-      //iconHtml: this.content.icon,
-      // icon: this.content.icon,
-      // hasIconSrc:
-      //   this.content.iconSrc !== null && this.content.iconSrc !== undefined
-      //     ? true
-      //     : false,
-      // iconSrc: this.content.iconSrc,
-      // hasCustomStyle: this.content.hasCustomStyle,
-      // importClasses: this.content.class,
-      // href: this.content.href,
-      // level: this.content.level,
-    };
+    return {};
   },
   methods: {
     // TODO: think about compress img to low quality but still acceptable,
@@ -84,11 +70,6 @@ export default {
       return this.content.iconSrc !== null && this.content.iconSrc !== undefined
         ? true
         : false;
-    },
-    isLevel1() {
-      if (this.content.level == 1) {
-        return true;
-      } else return false;
     },
   },
 };

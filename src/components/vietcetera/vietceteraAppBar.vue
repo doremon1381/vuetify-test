@@ -1,14 +1,19 @@
 <template>
-  <v-app-bar :elevation="2" :style="{ height: height + 'px' }"
-    class="defaultTextColor glass">
+  <v-app-bar :elevation="2" :style="{ height: height + 'px' }" class="defaultTextColor glass">
     <template v-slot:prepend>
       <!-- https://vuetifyjs.com/en/components/navigation-drawers/#temporary -->
-      <v-app-bar-nav-icon @click.stop="this.$emit('Click_Stop')" class="btn_40size_important btn_hover mb_10px_important"
-        v-if="!hideTogleButton"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click.stop="this.$emit('Click_Stop')"
+        class="btn_40size_important btn_hover mb_10px_important" v-if="!hideTogleButton"></v-app-bar-nav-icon>
 
       <v-app-bar-title class="v_app_bar_title mb_10px_important" :style="{
-        'margin-left': marginLeftWhenDisplayResized + 'px' + '!important',
-      }">{{ title }}</v-app-bar-title>
+        'margin-left': marginLeftWhenDisplayResized + 'px' + '!important'
+      }">
+        <a class="duration_300 styles_as_button" href="/" title="Vietcetera | Trang chủ" style="width: fit-content; display: flex;">
+          <span class="align-center flex height_100% width_100%">
+            <img src="./img/logo-text.svg" alt="Vietcetera" class="w_auto height_6">
+          </span>
+        </a>
+      </v-app-bar-title>
     </template>
 
     <div class="appBar_MiddleRegion mb_10px_important" v-if="$vuetify.display.lgAndUp">
@@ -34,7 +39,8 @@
         <v-icon>mdi-magnify</v-icon>
       </v-btn>
 
-      <v-btn class="styles_btn_main styles_btn_40 styles_btn_main_fill__primary__hover styles_btn_main_fill__primary mb_10px_important">
+      <v-btn
+        class="styles_btn_main styles_btn_40 styles_btn_main_fill__primary__hover styles_btn_main_fill__primary mb_10px_important">
         Đăng nhập
       </v-btn>
     </div>
